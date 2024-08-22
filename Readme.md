@@ -32,8 +32,8 @@ copyLangiumTgz
     },
 ```
 
-# Local npm dependency in sbt
-## build.sbt
+## Local npm dependency in sbt
+### build.sbt
 ```
 .settings(
 
@@ -43,3 +43,7 @@ copyLangiumTgz
       "hello-world" -> "./lib_langium/hello-world-0.0.1.tgz"
     ),
 ```
+
+
+## Further Reading regarding npm  sbt
+https://www.toptal.com/scala/using-scala-js-with-npm-and-browserify
