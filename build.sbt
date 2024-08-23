@@ -1,5 +1,5 @@
 
-ThisBuild / scalaVersion := "3.3.3"
+ThisBuild / scalaVersion := "3.5.0"
 
 import org.scalajs.linker.interface.ModuleSplitStyle
 import Dependencies._
@@ -12,7 +12,7 @@ ThisBuild / organization     := "com.example"
 ThisBuild / organizationName := "example"
 
 
-val copyLangiumTgz = taskKey[Boolean]("Links objects into a shared library.")
+val copyLangiumTgz = taskKey[Boolean]("Copys langium tgz files to target directory")
 
 
 copyLangiumTgz := {
@@ -49,9 +49,12 @@ lazy val root = (project in file("."))
     // `package` := (`package` dependsOn copyLangiumTgz).value,
 
     scalaJSUseMainModuleInitializer := true,
-    scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule)
-      .withModuleSplitStyle(ModuleSplitStyle.SmallestModules) 
-    },
+    // scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule)
+    //   .withModuleSplitStyle(ModuleSplitStyle.SmallestModules) 
+    // },
+
+    libraryDependencies += "org.scalactic" %%% "scalactic" % "3.2.19",
+    libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.19" % "test",
 
   
     Compile /npmDependencies ++= Seq(

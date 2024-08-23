@@ -1,6 +1,6 @@
 ## package npm to local file
 ### creates a tarball at the current directory which eventually needs to be copied into target/scala-3.3.3/scalajs-bundler/main/lib
-npm pack --packdestination ./lib_langium
+npm pack --pack-destination ./lib_langium
 
 ## copy packed library from above to target directory with sbt task
 copyLangiumTgz
